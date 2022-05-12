@@ -30,6 +30,19 @@ for user_navegacion in idusers_navegacion:
 
 print("El porcentaje de visitas que recibe el cliente que estan convertidas alcanza un porcentaje del " ,usuariosconvertidos/navegacion.shape[0]*100, end="%\n")
 
+#Ahora respondemos a la pregunta de que tipo de conversion, CALL o FORM, la cantidad de cada una
+#Comprobamos que no hay ningun dato repetido
+call = 0
+form = 0
+tipoconversion = conversiones["lead_type"]
+for type in tipoconversion:
+    if type == "CALL":
+        call += 1
+    else:
+        form += 1
+
+print("EL numero de conversiones generadas del tipo CALL es:", call)
+print("EL numero de conversiones generadas del tipo FORM es:", form)
 
 
 
