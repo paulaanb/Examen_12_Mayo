@@ -22,3 +22,4 @@ decrypted = fernet.decrypt(encrypted)
 with open('conversiones.csv', 'wb') as dec_file:
 	dec_file.write(decrypted)
 
+#Con esto hemos desencriptado el codigo
