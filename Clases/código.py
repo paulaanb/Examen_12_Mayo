@@ -56,4 +56,36 @@ for i in range(navegacion.shape[0]):
         usuariorecurrente.add(navegacion._get_value(i, "id_user"))
 print("El porcentaje de usuarios recurrentes en comparacion con los usuarios totales es del ", len(usuariorecurrente)/len(numerodeusuario)*100, end="%\n")
 
+#Ahora unimos estos datos a la tabla navegacion para ver si convierten o no
+data = []
+only_user = navegacion["id_user"]
+for user in only_user:
+    convierte = False
+    for i in conversiones["id_user"]:
+        if user == i:
+            convierte = True
+    
+    if convierte:
+        data.append(1)
+    else:
+        data.append(0)
+
+navegacion["convierte"] = data
+
+#Comprobamos el coche más visitado de la página usando la direccion http del enunciado
+cars = {
+    
+}
+
+for i in range(navegacion.shape[0]):
+    m = re.search("http(?:s?):\/(?:\/?)www\.metropolis\.com\/es\/(.+?)\/.*", str(navegacion._get_value(i, "url_landing")))
+    if m != None:
+        if m.groups()[0] in cars:
+            cars[m.groups()[0]] += 1
+        else:
+            cars[m.groups()[0]] = 1
+        
+for car in cars.keys():
+    print("El coche", car, "ha sido buscado un total de", cars[car], "veces")
+
 
