@@ -136,11 +136,3 @@ print(navegacion)
 
 #Una vez hemos modificado los datos de la tabla, procededmos a guardarlos
 navegacion.to_csv("navegacion_corregido.csv", index = False)
-
-
-for i in range(navegacion.shape[0]):
-    numerodeusuario.add(navegacion._get_value(i, "id_user"))
-    if navegacion._get_value(i, "user_recurrent") == True:
-        usuariorecurrente.add(navegacion._get_value(i, "id_user"))
-print("El porcentaje de usuarios recurrentes en comparacion con los totales es del:", len(usuariorecurrente)/len(numerodeusuario)*100, end="%\n")
-
