@@ -17,6 +17,9 @@ for i in range(conversiones.shape[0]):
 conversiones = pd.DataFrame(conversiones.drop(conversiones.index[index]), columns = conversiones.columns)
 conversiones = conversiones.reset_index()
 
+#Imprimimos el numero de visitas que el cliente recibe en el dia, y de ellas, cuantas convierten y cuantas no, en %
+print("El número de visitas que recibe el cliente en el dia es:", "/n", navegacion.shape[0], "visitas")
+
 
 
 
