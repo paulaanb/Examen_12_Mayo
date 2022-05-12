@@ -45,4 +45,15 @@ print("EL numero de conversiones generadas del tipo CALL es:", call)
 print("EL numero de conversiones generadas del tipo FORM es:", form)
 
 
+#Respondemos a la pregunta del porcentaje de usuarios recurrentes sobre el total de usuarios
+#Como solo podemos contabilizar al usuario una vez creamos una funcion para tal tarea
+usuariorecurrente={()}
+numerodeusuario={()}
+
+for i in range(navegacion.shape[0]):
+    numerodeusuario.add(navegacion._get_value(i, "id_user"))
+    if navegacion._get_value(i, "recurrente") == True:
+        usuariorecurrente.add(navegacion._get_value(i, "id_user"))
+print("El porcentaje de usuarios recurrentes en comparacion con los usuarios totales es del ", len(usuariorecurrente)/len(numerodeusuario)*100, end="%\n")
+
 
