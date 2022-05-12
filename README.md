@@ -93,7 +93,7 @@ b)Si nos quedamos con todos los datos repetidos buscar el más cercano a la conv
 Las soluciones de este ejercicio estan resueltas en el código siguiente:
  ```
 
- #Importamos las librerias que tenemos que utilizar
+
  #Importamos las librerias que tenemos que utilizar
   import re
   from numpy import shares_memory
